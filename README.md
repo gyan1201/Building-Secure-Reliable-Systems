@@ -29,10 +29,17 @@ Reliability and Security are both crucial components of a truly trustworthy syst
 and security share many common properties, they also require different design considderations. It is easy to miss the subtle interplay manager's failure was triggered by a reliability problem--poor
 load-balancing and load-shedding stratigies--and its recovery was later complicated by multiple measures designed to increase the security of the system.
 
+# Reliability Versus Security: Design Considerations
+In designing for reliability and Secuirty, you must consider different risks. The primary reliabilty risks are nonmalicious in nature--for example, a bad software update or a physical device failure. Security risks, however, come from adversaries who are actively trying to exploit system vulnerabilities. When designing for security, you must assume that an adversary could be trying to make things go wrong at any point.
+
+As a result, different systems are designed to resond to failures in quite different ways. In the absence of an adversary, systems often fail (or open): for example, an electronic lock is designed to remain open in case of power failure, to allow safe exit through the door. Fail/open behaviour can lead to obvious security vulnerabilities. To defend against an adversary who might exploit a power failure, you could design the door to fail secure and remain closed when not powered.
 
 # Reliability and Security Tradeoff: Redundancy
 In designing for reliability, you often need to add redundancy to systems. For instance, many electronic locks fail secure but accept  a physical ley during power failures. Similarly, fire escapes provide a redundant exit path for emergencies. While redundancy increases reliability, it also increases the attack surface. An adversary need only find a vulnerability in one path to be successful.
 
 # Reliability and Security Tradeoff: Incident Management
 The presence of an adversary can also affect methods of colloboration and the information that's available to responders during an incident. Reliability incidents benefit from having responders with multiple perspectives who can help find and mitigate the root cause quikly. By contrast, you'll often want to handle security incidents with the smallest number of people who can fix the problem effectively, so the adversary isn't tipped off to the recovery effort. In the security case, you'll share information on a need-to-know basis. Similarly, voluminous system logs may inform the response to an incident and reduce your time to recovery, but--depending on what is logged--those logs may be a valuable target for an attacker.
+
+# Confidentiality, Integrity, Availability
+Both security and reliability are concerned with the confidentiality, integrity, and availability of systems, but they view these properties through differnet lenses. The key difference between the two viewpoints is the presence or lack of malicious adversary. A reliable system must not breach confidentiality accidentally, like a buggy chat system that misdelivers, garbles, or loses messages might . Additionally, a secure system must prevent an active adversary from accesing, tamperng with, or destroying confidential data. Let's take a look at a few examples that demonstratr how a reliability problem can lead to a security issue.
 
