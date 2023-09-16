@@ -1,8 +1,9 @@
 # Building-Secure-Reliable-Systems
 Designing, Implementing  and Maintaining Systems
 
-#CHAPTER 1
-#The Intersection of Security and Reliability
+# CHAPTER 1
+
+# The Intersection of Security and Reliability
 
 On Password and Drills
 
@@ -27,3 +28,11 @@ flipped the card over, the service restarted and the outage ended.
 Reliability and Security are both crucial components of a truly trustworthy system, but building systems that  are both reliable and secure is difficult. While the requirements for reliability
 and security share many common properties, they also require different design considderations. It is easy to miss the subtle interplay manager's failure was triggered by a reliability problem--poor
 load-balancing and load-shedding stratigies--and its recovery was later complicated by multiple measures designed to increase the security of the system.
+
+
+# Reliability and Security Tradeoff: Redundancy
+In designing for reliability, you often need to add redundancy to systems. For instance, many electronic locks fail secure but accept  a physical ley during power failures. Similarly, fire escapes provide a redundant exit path for emergencies. While redundancy increases reliability, it also increases the attack surface. An adversary need only find a vulnerability in one path to be successful.
+
+# Reliability and Security Tradeoff: Incident Management
+The presence of an adversary can also affect methods of colloboration and the information that's available to responders during an incident. Reliability incidents benefit from having responders with multiple perspectives who can help find and mitigate the root cause quikly. By contrast, you'll often want to handle security incidents with the smallest number of people who can fix the problem effectively, so the adversary isn't tipped off to the recovery effort. In the security case, you'll share information on a need-to-know basis. Similarly, voluminous system logs may inform the response to an incident and reduce your time to recovery, but--depending on what is logged--those logs may be a valuable target for an attacker.
+
